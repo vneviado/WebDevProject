@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="eng"> 
+
+<head>
+
+<meta charset = "utf-8"/>
+<meta name="author​" content="Lera Neviadomska">
+<meta name="description" content="Prantl's Bakery">
+
+<link rel = "stylesheet" media = "all" type = "text/css" href = "css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/slick.css"/>
+<link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
+
+<script type = "text/javascript" src = "js/jquery-3.2.0.min.js"></script>
+<script type = "text/javascript" src = "js/scripts.js"></script>
+<script type = "text/javascript" src = "js/slick.min.js"></script>
+
+<title>Holiday Specials</title>
+
+</head>
+
+<body>
+
+	<div id = "top_row">
+		<img src="images/logo.jpg" alt = "Photo" height = "100" width = "210">
+		<nav>
+		  <ul>
+			<li><a href = "index.html">About</a></li>
+			<li class="dropdown">
+			    <a href="order.html" class="dropbtn">Products</a>
+			    <div class="dropdown-content">
+			      <a href="products.html">Products</a>
+			      <a href="https://www.goldbely.com/prantls-bakery" target="_blank">Shipping</a>
+			      <a href="data.html">Data Visualization</a>
+			    </div>
+			</li>
+			<li class="dropdown">
+			    <a href="special.html" class="dropbtn">Specialties</a>
+			    <div class="dropdown-content">
+			      <a href="holiday.html">Holiday Specials</a>
+			      <a href="wedding.html">Weddings</a>
+			      <a href="celebrate.html">Customized Treats</a>
+			    </div>
+			</li>
+			<li><a href = "locations.html">Locations</a></li>
+			<li><a href = "contact.html">Contact Us</a></li>
+		  </ul>
+		</nav>
+	</div>
+
+	
+	<div id = "contenthol">
+
+	<h1>Holiday Specials!</h1>
+	<p>From Valentine’s Day, Christmas, Thanksgiving, and Mardi Gras, we have cakes for your favorite occasions! </p>
+
+	<p>Easter is right around the corner! Check out our baked goods that are perfect for your colorful weekend, ranging from Easter themed cookies, cakes, cupcakes, and more!</p>
+
+		<!-- images taken from https://www.facebook.com/PrantlsBakery, 04/01/2017 -->
+
+		<div class="slideshow-container">
+		  <div class="mySlides fade">
+		    <div class="numbertext">1 / 5</div>
+		    <img src="images/holiday1.jpg" width = "1000" height = "450">
+		  </div>
+
+		  <div class="mySlides fade">
+		    <div class="numbertext">2 / 5</div>
+		    <img src="images/holiday2.jpg" width = "1000" height = "450">
+		  </div>
+
+		  <div class="mySlides fade">
+		    <div class="numbertext">3 / 5</div>
+		    <img src="images/holiday3.jpg" width = "1000" height = "450">
+		  </div>
+
+		  <div class="mySlides fade">
+		    <div class="numbertext">4 / 5</div>
+		    <img src="images/holiday4.jpg" width = "1000" height = "450">
+		  </div>
+
+		  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+		<br>
+
+		<div style="margin-left:31em">
+		  <span class="dot" onclick="currentSlide(1)"></span> 
+		  <span class="dot" onclick="currentSlide(2)"></span> 
+		  <span class="dot" onclick="currentSlide(3)"></span> 
+		  <span class="dot" onclick="currentSlide(4)"></span> 
+		</div>
+
+	</div>
+
+
+	<footer>
+		<hr/>
+		&copy; Prantl's Bakery 2017 | Created by Lera Neviadomska<br/>
+		<a href = "https://www.facebook.com/PrantlsBakery/" target="_blank"><img src = images/facebook.jpeg height = "45" width = "45"></a>
+		<a href = "https://twitter.com/prantlsbakery" target="_blank"><img src = images/twitter.png height = "44" width = "44"></a>
+		<a href = "https://www.instagram.com/prantls_bakery/" target="_blank"><img src = images/insta.png height = "44" width = "44"></a>
+		<a href = "https://www.yelp.com/biz/prantls-bakery-pittsburgh" target="_blank"><img src = images/yelp.png height = "46" width = "46"></a>
+	</footer>
+
+</div>
+
+<script>
+	var slideIndex = 1;
+	showSlides(slideIndex);
+</script>
+
+</body>
+
+
+</html​>

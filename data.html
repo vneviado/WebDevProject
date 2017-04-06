@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="eng"> 
+
+<head>
+
+<meta charset = "utf-8"/>
+<meta name="author​" content="Lera Neviadomska">
+<meta name="description" content="Prantl's Bakery">
+
+<link rel = "stylesheet" media = "all" type = "text/css" href = "css/style.css" />
+<script type = "text/javascript" src = "js/jquery-3.2.0.min.js"></script>
+<script type = "text/javascript" src = "js/scripts.js"></script>
+<script src = "http://code.highcharts.com/highcharts.js"></script>
+<script src = "http://code.highcharts.com/modules/exporting.js"></script>
+
+
+<title>Data</title>
+
+</head>
+
+<body>
+<div id="container">
+
+	<div id = "top_row">
+		<img src="images/logo.jpg" alt = "Photo" height = "100" width = "210">
+		<nav>
+		  <ul>
+			<li><a href = "index.html">About</a></li>
+			<li class="dropdown">
+			    <a href="order.html" class="dropbtn">Products</a>
+			    <div class="dropdown-content">
+			      <a href="products.html">Products</a>
+			      <a href="https://www.goldbely.com/prantls-bakery" target="_blank">Shipping</a>
+			      <a href="data.html">Data Visualization</a>
+			    </div>
+			</li>
+			<li class="dropdown">
+			    <a href="special.html" class="dropbtn">Specialties</a>
+			    <div class="dropdown-content">
+			      <a href="holiday.html">Holiday Specials</a>
+			      <a href="wedding.html">Weddings</a>
+			      <a href="celebrate.html">Customized Treats</a>
+			    </div>
+			</li>
+			<li><a href = "locations.html">Locations</a></li>
+			<li><a href = "contact.html">Contact Us</a></li>
+		  </ul>
+		</nav>
+	</div>
+
+	<div id="chart"></div>
+
+	<footer>
+		<hr/>
+		&copy; Prantl's Bakery 2017 | Created by Lera Neviadomska<br/>
+		<a href = "https://www.facebook.com/PrantlsBakery/" target="_blank"><img src = images/facebook.jpeg height = "45" width = "45"></a>
+		<a href = "https://twitter.com/prantlsbakery" target="_blank"><img src = images/twitter.png height = "44" width = "44"></a>
+		<a href = "https://www.instagram.com/prantls_bakery/" target="_blank"><img src = images/insta.png height = "44" width = "44"></a>
+		<a href = "https://www.yelp.com/biz/prantls-bakery-pittsburgh" target="_blank"><img src = images/yelp.png height = "46" width = "46"></a>
+	</footer>
+
+    <!-- the following script' source: http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/demo/pie-donut/  -->
+
+	<script>
+	var colors = Highcharts.getOptions().colors,
+    categories = ['Cakes', 'Donuts', 'Pies', 'Cookies', 'Coffecakes', 'Bread'],
+    data = [{
+        y: 41.5,
+        color: colors[0],
+        drilldown: {
+            name: 'Cakes',
+            categories: ['Burnt Almond Torte', 'Carrot Cake', 'Chocolate Cake', 'Seasonal'],
+            data: [21, 2.5, 8, 10],
+            color: colors[0]
+        }
+    }, {
+        y: 15,
+        color: colors[1],
+        drilldown: {
+            name: 'Donuts',
+            categories: ['Cake Donuts', 'Crueller', 'Sweet Pretzel', 'Puffs', 'Rings'],
+            data: [5, 2, 2, 4, 2],
+            color: colors[1]
+        }
+    }, {
+        y: 16,
+        color: colors[2],
+        drilldown: {
+            name: 'Pies',
+            categories: ['Apple Pie', 'Cherry Pie', 'Caramel Pie', 'Blueberry Pie'],
+            data: [1,4,5,6],
+            color: colors[2]
+        }
+    }, {
+        y: 12.5,
+        color: colors[3],
+        drilldown: {
+            name: 'Cookies',
+            categories: ['Macaroons', 'Brownies', 'Nut Cookie'],
+            data: [4.5, 5, 3],
+            color: colors[3]
+        }
+    }, {
+        y: 3,
+        color: colors[4],
+        drilldown: {
+            name: 'Coffecakes',
+            categories: ['Almond Coffee Cake', 'Cherry Coffee Cake', 'Chewy Pecan'],
+            data: [1, 0.75, 1.25],
+            color: colors[4]
+        }
+    }, {
+        y: 12,
+        color: colors[5],
+        drilldown: {
+            name: 'Bread',
+            categories: ['Cinnamon Bread', 'Croissant-Plain', 'Egg Bread'],
+            data: [5,3,4],
+            color: colors[5]
+        }
+    }],
+    browserData = [],
+    versionsData = [],
+    i,
+    j,
+    dataLen = data.length,
+    drillDataLen,
+    brightness;
+
+
+// Build the data arrays
+for (i = 0; i < dataLen; i += 1) {
+
+    // add browser data
+    browserData.push({
+        name: categories[i],
+        y: data[i].y,
+        color: data[i].color
+    });
+
+    // add version data
+    drillDataLen = data[i].drilldown.data.length;
+    for (j = 0; j < drillDataLen; j += 1) {
+        brightness = 0.2 - (j / drillDataLen) / 5;
+        versionsData.push({
+            name: data[i].drilldown.categories[j],
+            y: data[i].drilldown.data[j],
+            color: Highcharts.Color(data[i].color).brighten(brightness).get()
+        });
+    }
+}
+
+// Create the chart
+Highcharts.chart('chart', {
+    chart: {
+        type: 'pie'
+    },
+    title: {
+        text: 'Sales of the most popular products'
+    },
+    
+    plotOptions: {
+        pie: {
+            shadow: false,
+            center: ['50%', '50%']
+        }
+    },
+    tooltip: {
+        valueSuffix: '%'
+    },
+    series: [{
+        name: 'Product',
+        data: browserData,
+        size: '60%',
+        dataLabels: {
+            formatter: function () {
+                return this.y > 5 ? this.point.name : null;
+            },
+            color: '#ffffff',
+            distance: -30
+        }
+    }, {
+        name: 'Product type share',
+        data: versionsData,
+        size: '80%',
+        innerSize: '60%',
+        dataLabels: {
+            formatter: function () {
+                // display only if larger than 1
+                return this.y > 1 ? '<b>' + this.point.name + ':</b> ' + this.y + '%' : null;
+            }
+        }
+    }]
+});
+	</script>
+</div>
+</body>
+
+
+</html​>

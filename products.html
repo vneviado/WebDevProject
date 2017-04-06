@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="eng"> 
+
+<head>
+
+<meta charset = "utf-8"/>
+<meta name="author​" content="Lera Neviadomska">
+<meta name="description" content="Prantl's Bakery">
+
+<link rel = "stylesheet" media = "all" type = "text/css" href = "css/style.css" />
+<script type = "text/javascript" src = "js/jquery-3.2.0.min.js"></script>
+<script type = "text/javascript" src = "js/scripts.js"></script>
+<script src = "http://code.highcharts.com/highcharts.js"></script>
+<script src = "http://code.highcharts.com/modules/exporting.js"></script>
+
+
+<title>Products</title>
+
+</head>
+
+<body>
+<div id="container">
+
+	<div id = "top_row">
+		<img src="images/logo.jpg" alt = "Photo" height = "100" width = "210">
+		<nav>
+		  <ul>
+			<li><a href = "index.html">About</a></li>
+			<li class="dropdown">
+			    <a href="order.html" class="dropbtn">Products</a>
+			    <div class="dropdown-content">
+			      <a href="products.html">Products</a>
+			      <a href="https://www.goldbely.com/prantls-bakery" target="_blank">Shipping</a>
+			      <a href="data.html">Data Visualization</a>
+			    </div>
+			</li>
+			<li class="dropdown">
+			    <a href="special.html" class="dropbtn">Specialties</a>
+			    <div class="dropdown-content">
+			      <a href="holiday.html">Holiday Specials</a>
+			      <a href="wedding.html">Weddings</a>
+			      <a href="celebrate.html">Customized Treats</a>
+			    </div>
+			</li>
+			<li><a href = "locations.html">Locations</a></li>
+			<li><a href = "contact.html">Contact Us</a></li>
+		  </ul>
+		</nav>
+	</div>
+
+	<div id = "contentpr">
+
+		<!-- Tab creation guidelines taken from https://www.w3schools.com/howto/howto_js_tabs.asp -->
+		<div class="tab"> 
+			  <button class="tablinks" onclick="openLocation(event, 'Cakes')" id="defaultOpen">Cakes</button>
+			  <button class="tablinks" onclick="openLocation(event, 'Pies')">Pies</button>
+			  <button class="tablinks" onclick="openLocation(event, 'Coffeecakes')">Coffeecakes</button>
+			</div>
+
+			<!-- All following images are taken from http://www.bakesmartonline.com/prantls/selectproduct.php?sub=Pies+%26+Tarts, 01/02/2017 -->
+
+			<div id="Cakes" class="tabcontent">
+			  <h3>Cakes</h3>
+
+			    <table style="width:80% " align = "center" >
+			    	<tr>
+		    			<td><img src="images/cake1.jpg" width = "180" height = "100"></td>
+		    			<td><img src="images/cake2.png" width = "180" height = "100"></td>
+		  			</tr>
+		  			<tr>
+		  				<td>Burnt Almond Torte | $20.99</td>
+		  				<td>Burnt Almond Torte Easter | $54.99</td>
+		  			</tr>
+		  			<tr>
+		  				<td><img src="images/cake3.jpg" width = "180" height = "100"></td>
+		    			<td><img src="images/cake4.jpg" width = "180" height = "100"></td>
+		  			</tr>
+		  			<tr>
+		  				<td>Chocolate Sour Cream Cake | $18.99</td>
+		  				<td>Carrot Cake | $18.99</td>
+		  			</tr>
+				</table>
+
+			</div>
+
+			<div id="Pies" class="tabcontent">
+			  	<h3>Pies</h3>
+
+			  	<table style="width:80% " align = "center" >
+			    	<tr>
+		    			<td><img src="images/pie1.jpg" width = "180" height = "100"></td>
+		    			<td><img src="images/pie2.jpg" width = "180" height = "100"></td>
+		  			</tr>
+		  			<tr>
+		  				<td>Apple Pie-Small (8") | $9.29</td>
+		  				<td>Blueberry Pie | $9.29</td>
+		  			</tr>
+		  			<tr>
+		  				<td><img src="images/pie3.jpg" width = "180" height = "100"></td>
+		    			<td><img src="images/pie4.jpg" width = "180" height = "100"></td>
+		  			</tr>
+		  			<tr>
+		  				<td>Caramel Apple Nut Pie | $9.29</td>
+		  				<td>Cherry Pie | $9.29</td>
+		  			</tr>
+				</table>
+			  	
+
+			</div>
+
+			<div id="Coffeecakes" class="tabcontent">
+			  	<h3>Coffeecakes</h3>
+
+			  	<table style="width:80% " align = "center" >
+			    	<tr>
+		    			<td><img src="images/coffee1.jpg" width = "180" height = "100"></td>
+		    			<td><img src="images/coffee2.jpg" width = "180" height = "100"></td>
+		  			</tr>
+		  			<tr>
+		  				<td>Almond Coffee Cake | $8.99</td>
+		  				<td>Chewy Pecan | $8.99</td>
+		  			</tr>
+		  			<tr>
+		  				<td><img src="images/coffee3.jpg" width = "180" height = "100"></td>
+		    			<td><img src="images/coffee4.jpg" width = "180" height = "100"></td>
+		  			</tr>
+		  			<tr>
+		  				<td>Raspberry Almond Coffee Cake | $8.99</td>
+		  				<td>Cinnamon Raspberry Crumb CC | $8.99</td>
+		  			</tr>
+				</table>
+	
+			</div>
+
+		<p>Click <a href = "http://www.bakesmartonline.com/prantls/category.php" target="_blank">here</a> for more options!</p>
+
+	</div>
+	<script>// the element with id="defaultOpen" will be open by default!
+		document.getElementById("defaultOpen").click();
+	</script>
+		
+
+	<footer>
+		<hr/>
+		&copy; Prantl's Bakery 2017 | Created by Lera Neviadomska<br/>
+		<a href = "https://www.facebook.com/PrantlsBakery/" target="_blank"><img src = images/facebook.jpeg height = "45" width = "45"></a>
+		<a href = "https://twitter.com/prantlsbakery" target="_blank"><img src = images/twitter.png height = "44" width = "44"></a>
+		<a href = "https://www.instagram.com/prantls_bakery/" target="_blank"><img src = images/insta.png height = "44" width = "44"></a>
+		<a href = "https://www.yelp.com/biz/prantls-bakery-pittsburgh" target="_blank"><img src = images/yelp.png height = "46" width = "46"></a>
+	</footer>
+
+</div>
+</body>
+
+
+</html​>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="eng"> 
+
+<head>
+
+<meta charset = "utf-8"/>
+<meta name="author​" content="Lera Neviadomska">
+<meta name="description" content="Prantl's Bakery">
+
+<link rel = "stylesheet" media = "all" type = "text/css" href = "css/style.css" />
+<script type = "text/javascript" src = "js/jquery-3.2.0.min.js"></script>
+<script type = "text/javascript" src = "js/scripts.js"></script>
+<script src = "http://code.highcharts.com/highcharts.js"></script>
+<script src = "http://code.highcharts.com/modules/exporting.js"></script>
+
+
+<title>Locations</title>
+
+</head>
+
+<body>
+<div id="container">
+
+	<div id = "top_row">
+		<img src="images/logo.jpg" alt = "Photo" height = "100" width = "210">
+		<nav>
+		  <ul>
+			<li><a href = "index.html">About</a></li>
+			<li class="dropdown">
+			    <a href="order.html" class="dropbtn">Products</a>
+			    <div class="dropdown-content">
+			      <a href="products.html">Products</a>
+			      <a href="https://www.goldbely.com/prantls-bakery" target="_blank">Shipping</a>
+			      <a href="data.html">Data Visualization</a>
+			    </div>
+			</li>
+			<li class="dropdown">
+			    <a href="special.html" class="dropbtn">Specialties</a>
+			    <div class="dropdown-content">
+			      <a href="holiday.html">Holiday Specials</a>
+			      <a href="wedding.html">Weddings</a>
+			      <a href="celebrate.html">Customized Treats</a>
+			    </div>
+			</li>
+			<li><a href = "locations.html">Locations</a></li>
+			<li><a href = "contact.html">Contact Us</a></li>
+		  </ul>
+		</nav>
+	</div>
+
+	<div id = "content">
+	<div id = "contentloc">
+
+		<!-- Tab creation guidelines taken from https://www.w3schools.com/howto/howto_js_tabs.asp -->
+		<div class="tab"> 
+			  <button class="tablinks" onclick="openLocation(event, 'Downtown')" id="defaultOpen">Downtown</button>
+			  <button class="tablinks" onclick="openLocation(event, 'Shadyside')">Shadyside</button>
+			</div>
+
+			<div id="Downtown" class="tabcontent">
+			  <h3>Downtown</h3>
+			  	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.542356955943!2d-80.00426918460332!3d40.4411314793623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8834f15696baf219%3A0x9e8bccef10009784!2sPrantl&#39;s+Bakery!5e0!3m2!1sen!2sus!4v1491170989973" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			    
+			    <hr/>
+
+			    <table style="width:80% " align = "center" >
+			    	<tr>
+		    			<td align="center"><h3>Address:</h3></td>
+		    			<td align="left"><h3>Hours:</h3></td>
+		  			</tr>
+		  			<tr>
+		  				<td align="center">438 Market Street</td>
+		  				<td align="left">Monday – Friday: 7AM – 6PM</td>
+		  			</tr>
+		  			<tr>
+		  				<td align="center">Pittsburgh, PA 15222</td>
+		  				<td align="left">Saturday: 9AM – 4PM</td>
+		  			</tr>
+		  			<tr>
+		  				<td align="left">412-471-6861 | <a href = "mailto:infoms@prantlsbakery.com" target="_blank">Email Us!</a></td></td>
+		  				<td align="left">Sunday: 10AM – 3PM</td>
+		  			</tr>
+				</table>
+
+				<hr/>
+
+				<table style="width:80% " align = "center" >
+					<tr>
+						<!-- pictures taken from https://www.yelp.com/biz_photos/prantls-bakery-pittsburgh-2, 04/03/2017 -->
+		    			<td><img src="images/down1.jpg" alt = "Photo" height = "200" width = "200"></td>
+		    			<td><img src="images/down2.jpg" alt = "Photo" height = "200" width = "200"></td>
+		    			<td><img src="images/down3.jpg" alt = "Photo" height = "200" width = "200"></td>
+		  			</tr>
+		  		</table>
+
+		  		<hr/>
+
+				<div id = "container-graphD"></div>
+				<br>
+
+			</div>
+
+			<div id="Shadyside" class="tabcontent">
+			  	<h3>Shadyside</h3>
+			  	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.06618549319!2d-79.9351090496303!3d40.45167206133736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8834f211aed70341%3A0x10db72884d553d04!2sPrantl&#39;s+Bakery!5e0!3m2!1sen!2sus!4v1491171045464" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+		  		<hr/>
+
+			  	<table style="width:80% " align = "center" >
+					<tr>
+		    			<td align="center"><h3>Address:</h3></td>
+		    			<td align="left"><h3>Hours:</h3></td>
+		  			</tr>
+		  			<tr>
+		  				<td align="center">5525 Walnut Street</td>
+		  				<td align="left">Monday: 9AM – 4PM</td>
+		  			</tr>
+		  			<tr>
+		  				<td align="center">Pittsburgh, PA 15232</td>
+		  				<td align="left">Tuesday – Saturday: 7:30AM – 6PM</td>
+		  			</tr>
+		  			<tr>
+		  				<td align="left">412-621-2092 | <a href = "mailto:info@prantlsbakery.com" target="_blank">Email Us!</a></td></td></td>
+		  				<td align="left">Sunday: 9AM – 4PM</td>
+		  			</tr>
+				</table>
+
+				<hr/>
+
+			  	<table style="width:80% " align = "center" >
+					<tr>
+						<!-- pictures taken by myself! -->
+		    			<td><img src="images/shady1.jpg" alt = "Photo" height = "200" width = "200"></td>
+		    			<td><img src="images/shady2.jpg" alt = "Photo" height = "200" width = "200"></td>
+		    			<td><img src="images/shady3.jpg" alt = "Photo" height = "200" width = "200"></td>
+		  			</tr>
+		  		</table>
+
+				<hr/>
+
+				<div id = "container-graphS"></div>
+				<br>
+
+			</div>
+	</div></div>
+
+	<script> // the element with id="defaultOpen" will be open by default!
+		document.getElementById("defaultOpen").click();
+	</script>
+		
+
+	<footer>
+		<hr/>
+		&copy; Prantl's Bakery 2017 | Created by Lera Neviadomska<br/>
+		<a href = "https://www.facebook.com/PrantlsBakery/" target="_blank"><img src = images/facebook.jpeg height = "45" width = "45"></a>
+		<a href = "https://twitter.com/prantlsbakery" target="_blank"><img src = images/twitter.png height = "44" width = "44"></a>
+		<a href = "https://www.instagram.com/prantls_bakery/" target="_blank"><img src = images/insta.png height = "44" width = "44"></a>
+		<a href = "https://www.yelp.com/biz/prantls-bakery-pittsburgh" target="_blank"><img src = images/yelp.png height = "46" width = "46"></a>
+	</footer>
+
+</div>
+</body>
+
+
+</html​>
